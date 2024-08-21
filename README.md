@@ -25,7 +25,7 @@ Model: [yeftakun/nsfw-detecion](https://huggingface.co/yeftakun/nsfw-detection/b
 ```
 
 
-## Prerequisites
+## Requirements
 
 Ensure you have the following libraries installed:
 
