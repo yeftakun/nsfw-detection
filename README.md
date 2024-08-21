@@ -4,7 +4,7 @@ This project is a NSFW image detection using the InceptionV3 model. It classifie
 
 Dataset: deepghs/nsfw_detect (huggingface)
 
-Model: [yeftakun/nsfw-detecion](https://huggingface.co/yeftakun/nsfw-detection/blob/main/inceptionv3_nsfw_model.h5) - `700 image` `5 epoch`
+Model: [yeftakun/nsfw-detecion](https://huggingface.co/yeftakun/nsfw-detection/blob/main/inceptionv3_nsfw_model.h5) - `700 image/class` `5 epoch`
 
 
 
