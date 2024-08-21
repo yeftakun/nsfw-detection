@@ -65,7 +65,7 @@ python training.py
 The script will load the InceptionV3 model pre-trained on ImageNet, add custom layers on top, and fine-tune the model using your dataset. The trained model will be saved as inceptionv3_nsfw_model.h5.
 
 ## Detect Images
-To classify an image, download first the [dataset](https://huggingface.co/yeftakun/nsfw-detection/blob/main/inceptionv3_nsfw_model.h5) and place in main directory, then place the image in the img/ folder and run the main.py script:
+To classify an image, download first the dataset  ([huggingface](https://huggingface.co/yeftakun/nsfw-detection/blob/main/inceptionv3_nsfw_model.h5) | [GDrive](https://drive.google.com/drive/folders/1MsGqlNwVy81yMTkS3Ze6ZoAqf9HB9Wsc?usp=sharing)) and place in main directory, then place the image in the img/ folder and run the main.py script:
 
 ```
 python main.py
