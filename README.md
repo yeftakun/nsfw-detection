@@ -1,4 +1,4 @@
-# ML - NSFW Detection
+# NSFW Detection
 
 Dataset: deepghs/nsfw_detect (huggingface)
 
