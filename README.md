@@ -82,8 +82,3 @@ Example output:
   "drawings": 0.00
 }
 ```
-
-## Notes
-
-The image size for both training and classification is set to 150x150. You can modify the img_width and img_height variables in both scripts if you want to use a different size.
-The model is trained for 5 epochs as a starting point. You can adjust the number of epochs in training.py based on your dataset's performance.
