@@ -6,7 +6,7 @@ from tensorflow.keras.models import Model
 
 # Parameter
 img_width, img_height = 150, 150
-batch_size = 16
+batch_size = 64
 num_classes = 5
 
 # Data augmentation dan pemuatan data
@@ -31,6 +31,23 @@ validation_generator = datagen.flow_from_directory(
     subset='validation'
 )
 
+# Mengonversi ke tf.data.Dataset
+train_dataset = tf.data.Dataset.from_generator(
+    lambda: train_generator,
+    output_signature=(
+        tf.TensorSpec(shape=(None, img_width, img_height, 3), dtype=tf.float32),
+        tf.TensorSpec(shape=(None, num_classes), dtype=tf.float32)
+    )
+).repeat()  # Ulangi data
+
+validation_dataset = tf.data.Dataset.from_generator(
+    lambda: validation_generator,
+    output_signature=(
+        tf.TensorSpec(shape=(None, img_width, img_height, 3), dtype=tf.float32),
+        tf.TensorSpec(shape=(None, num_classes), dtype=tf.float32)
+    )
+).repeat()  # Ulangi data
+
 # Memuat model InceptionV3 yang telah dilatih sebelumnya tanpa lapisan atas
 base_model = InceptionV3(weights='imagenet', include_top=False, input_shape=(img_width, img_height, 3))
 
@@ -50,11 +67,11 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 
 # Melatih model
 history = model.fit(
-    train_generator,
-    steps_per_epoch=train_generator.samples // batch_size,
-    epochs=5,
-    validation_data=validation_generator,
-    validation_steps=validation_generator.samples // batch_size
+    train_dataset,
+    steps_per_epoch=len(train_generator),
+    epochs=30,
+    validation_data=validation_dataset,
+    validation_steps=len(validation_generator)
 )
 
 # Menyimpan model
