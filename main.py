@@ -7,7 +7,7 @@ import numpy as np
 img_width, img_height = 150, 150
 
 # Memuat model
-model = load_model('inceptionv3_nsfw_model.h5')
+model = load_model('model/inceptionv3_nsfw_model.h5')
 
 def classify_image(img_path):
     img = image.load_img(img_path, target_size=(img_width, img_height))
@@ -21,4 +21,4 @@ def classify_image(img_path):
     return json.dumps(result, indent=2)
 
 # Contoh penggunaan
-print(classify_image('img/hehe.jpg'))
+print(classify_image("img/hehe.jpg"))

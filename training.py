@@ -7,7 +7,7 @@ from tensorflow.keras.models import Model
 # Parameter
 img_width, img_height = 150, 150
 batch_size = 64
-num_classes = 5
+num_classes = 2
 
 # Data augmentation dan pemuatan data
 datagen = ImageDataGenerator(
@@ -69,7 +69,7 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 history = model.fit(
     train_dataset,
     steps_per_epoch=len(train_generator),
-    epochs=30,
+    epochs=10,
     validation_data=validation_dataset,
     validation_steps=len(validation_generator)
 )
