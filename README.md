@@ -3,9 +3,9 @@
 This project is a NSFW image detection using the InceptionV3 model. It classifies images into five categories: `sexy`, `hentai`, `porn`, `neutral`, and `drawings`. The model is trained on a custom dataset and can be used to predict the category of any given image.
 
 Dataset: deepghs/nsfw_detect (huggingface)
-
+<!--
 Model: [yeftakun/nsfw-detecion](https://huggingface.co/yeftakun/nsfw-detection/blob/main/inceptionv3_nsfw_model.h5) - `700 image/class` `5 epoch`
-
+-->
 
 
 ## Project Structure
